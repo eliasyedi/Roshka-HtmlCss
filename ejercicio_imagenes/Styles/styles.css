@@ -1,0 +1,66 @@
+
+
+
+#imagen1{
+	position:  absolute;
+}
+
+#imagen2{
+	position:  absolute;
+	left: 10%;
+	top: 10%;
+
+}
+
+#imagen3{
+	position:  absolute;
+	left: 20%;
+	top: 20%;
+	
+	
+}
+
+
+#imagen4{
+	position:  absolute;
+	left: 30%;
+	top: 30%;
+}
+#imagen5{
+	position:  absolute;
+	left: 40%;
+	top: 40%;
+}
+
+
+#imagen6{
+	position:  absolute;
+	left: 50%;
+	top: 50%;
+}
+
+img:hover{
+	border: 5px solid darkred;
+}
+
+img:hover ~ img:nth-child(n) {
+	display: none;
+}
+
+
+
+
+
+
+
+
+
+.pizarra{
+	position: relative;
+	border:  5px solid black;
+	width:  1000px;
+	height: 800px;
+	border-width: 5px;
+	border-color: black;
+
+}
