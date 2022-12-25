@@ -47,12 +47,26 @@ class Calculadora{
 
 
 	operationEquals(){
-		if(this.numero1 === '' || this.numero2 ===''){
-			alert("falta un operando");
-			return;
+		if(this.operacion === ''){
+			this.display.value = parseFloat(this.numero1);
 		}
-		this.display.value = parseFloat(this.numero1)+parseFloat(this.numero2);
-
+		
+		if(this.numero2 === ''){
+			this.display.value = "MathError";
+		}
+		if(this.operacion ==='+')
+			this.display.value = parseFloat(this.numero1)+parseFloat(this.numero2);
+		if(this.operacion === '-')
+			this.display.value = parseFloat(this.numero1)-parseFloat(this.numero2);
+		if(this.operacion ==='*')
+			this.display.value = parseFloat(this.numero1)*parseFloat(this.numero2);
+		if(this.operacion === '/' && this.numero2 !== '0')
+			this.display.value = parseFloat(this.numero1)/parseFloat(this.numero2);
+		
+		this.numero1 = this.display.value;
+		this.operacion = '';
+		this.numero2 = '';
+			
 	}
 
 		
