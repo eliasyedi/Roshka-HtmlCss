@@ -4,25 +4,33 @@
 const ruc = document.querySelector("#ruc");
 const check = document.querySelector("#guardar");
 const form = document.querySelector("#form")
-
+const invalid = document.querySelector(".invalid-feedback")
 
 check.addEventListener('change',()=>{
     console.log(check.checked);
     if(check.checked){
         if (checkValidity()) {
             form.classList.add('was-validated')  
+            invalid.style.display="none"
+            ruc.classList.remove("invalid-feedback")
+            ruc.classList.add("valid-feedback")
             form.submit();
+
             return;
         }
+
+        form.classList.add("is-invalid")
+        ruc.classList.add("invalid-feedback")
+        invalid.style.display="contents"
+        console.log(ruc.classList)
         check.checked=false;
-        alert("ruc malo") 
     }
         
 }
 )
 
 
-let a = 0;
+
 const numeros = ['0' , '1', '2', '3' , '4', '5', '6', '7', '8', '9']
 
 function checkValidity(){
